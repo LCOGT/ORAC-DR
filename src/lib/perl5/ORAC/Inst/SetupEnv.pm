@@ -184,6 +184,7 @@ sub orac_calc_instrument_settings {
                          'KB11' => 'lsc',
                          'KB77' => 'lsc',
                          'KB15' => 'lsc',
+                         'KB93' => 'lsc',
                          'KB70' => 'cpt',
                          'KB21' => 'cpt',
                          'KB76' => 'cpt',
