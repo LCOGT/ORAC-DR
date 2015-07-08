@@ -213,6 +213,8 @@ sub orac_calc_instrument_settings {
                          'EF08' => 'lsc',
                          'EF09' => 'coj',
                          'EF10' => 'coj',
+                         'KB29' => 'tfn',
+                         'KB88' => 'tfn'
                        );
 
     # Split into instrument and camera code

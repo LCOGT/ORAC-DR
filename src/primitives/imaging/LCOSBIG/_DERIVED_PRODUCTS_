@@ -105,6 +105,8 @@ use ORAC::Version;
                      'EF07' => 'Autoguider',
                      'EF08' => 'Autoguider',
                      'EF09' => 'Autoguider',
+                     'KB29' => '0m4-SciCam-SBIG',
+                     'KB88' => '0m4-SciCam-SBIG',
                    );
       my $cam = uc( $Frm->uhdr( "ORAC_INSTRUMENT" ) );
       if (!exists $lcogt_cammap{$cam}) {
