@@ -512,7 +512,7 @@ sub orac_determine_inst_classes {
   } elsif ( $inst eq 'LCOSBIG_0M4' ) {
     $groupclass = "ORAC::Group::LCOSBIG";
     $frameclass = "ORAC::Frame::LCOSBIG_0M4";
-    $calclass = "ORAC::Calib::LCOSBIG_0M4";
+    $calclass = "ORAC::Calib::LCOSBIG";
     $instclass = "ORAC::Inst::LCOSBIG";
 
   } elsif ( $inst eq 'LCOSBIG_0M8' ) {
@@ -1223,6 +1223,7 @@ sub orac_determine_calibration_search_path {
 
   } elsif( $inst eq 'LCOSBIG_0M4' ) {
     push( @path, File::Spec->catdir( $root, 'lcosbig_0m4' ) );
+    push( @path, File::Spec->catdir( $root, 'lcosbig' ) );
     push( @path, File::Spec->catdir( $root, 'general-optical') );
 
   } elsif( $inst eq 'LCOSBIG_0M8' ) {
