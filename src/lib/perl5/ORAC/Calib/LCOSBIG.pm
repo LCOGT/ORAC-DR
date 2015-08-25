@@ -48,6 +48,7 @@ __PACKAGE__->CreateBasicAccessors( baseshift => { isarray => 1 },
                                    astromqc => {},
                                    mask => { copyindex => 1 },
                                    referenceoffset => { isarray => 1 },
+                                   scamp_catalogue => { copyindex => 1 },
                                    skybrightness => {},
                                    skycat_catalogue => { copyindex => 1 },
                                    zeropoint => {} );
@@ -116,6 +117,15 @@ sub dqc {
   return $self->GenericIndexEntryAccessor( "dqc", [qw/ AIRMASS ELLIPTICITY FWHM ORIENT QC_OBCON QC_IMGST QC_CATST QC_PHTST /], @_ );
 }
 
+
+=item B<scamp_catalogue>
+
+=cut
+
+sub scamp_catalogue {
+  my $self = shift;
+  return $self->GenericIndexEntryAccessor( "scamp_catalogue", "SCAMP_CATALOGUE", @_ );
+}
 
 =item B<zeropoint>
 
