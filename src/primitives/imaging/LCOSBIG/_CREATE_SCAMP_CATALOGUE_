@@ -93,7 +93,8 @@ if( $Frm->uhdr("CREATE_CATALOGUE") ) {
 
 # Obtain FWHM
   my $fwhm = 1.5;
-  if (defined $Cal->dqc ) {
+  my $dqc = eval { $Cal->dqc };
+  if ( !$@ ) {
     my $dqc = $Cal->dqc;
 # Dereference row/hash reference of DQC params
     $fwhm = $dqc->{'FWHM'};
