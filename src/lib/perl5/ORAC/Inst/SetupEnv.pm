@@ -199,6 +199,8 @@ sub orac_calc_instrument_settings {
                          'FL03' => 'lsc',
                          'FL04' => 'lsc',
                          'FL07' => 'lsc',
+                         'FL08' => 'coj',
+                         'FL09' => 'coj',
                          'EN06' => 'ogg',
                          'EM01' => 'ogg',
                          'FS02' => 'ogg',
