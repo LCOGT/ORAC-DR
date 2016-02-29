@@ -130,7 +130,7 @@ if( $Frm->uhdr( "ADD_ASTROMETRY" ) ) {
   my $platescale = $_GET_PLATE_SCALE_{PLATESCALE};
   print "Original platescale=$platescale\n";
 
-  orac_print "Adding accurate astrometry to $in (maxcoeff=$maxcoeff).\n";
+  orac_print "Adding accurate astrometry to $in (maxcoeff=$maxcoeff) using SCAMP.\n";
   $Obj->uhdr( "ASTROMETRY_ADDED", 0 );
 
   # We need the scamp binary. Display a warning
@@ -175,6 +175,7 @@ if( $Frm->uhdr( "ADD_ASTROMETRY" ) ) {
     my @stderr_buf;
     my $astromver;
     my( $success, $error_msg, $full_buf_ref, $stdout_buf_ref, $stderr_buf_ref );
+    orac_print "HERE I AM 6 \n";
 
 # If we have some non-saturated stars, run SCAMP on the catalog.
     if ( $ldac_catalogue->sizeof() > 0 ) {

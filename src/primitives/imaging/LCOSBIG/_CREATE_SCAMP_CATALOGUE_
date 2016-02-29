@@ -126,13 +126,17 @@ if( $Frm->uhdr("CREATE_CATALOGUE") ) {
 # Unix) and directory path so we know where to locate the companion SExtractor
 # param file
   (my $volume, my $directories, my $conf_filename) = File::Spec->splitpath( $conf_file );
+  print "Directories, conf_filename=" .  $directories, $conf_filename . "\n";
   my $params_file = File::Spec->catpath($volume, $directories, 'extractor_catalogue_scamp.param');
+  print "params_file=" . $params_file . "\n";
+
   $extractor->parameters_name($params_file);
   $extractor->_write_config_temp_file;
 
 # Perform inventory on the field
   $conf_file = $extractor->_config_file_name;
   my $param1 = "image=$in config=$conf_file";
+  orac_print "Running extractor, image=$in, config file=$conf_file\n";
 
 # Derive an inventory of the images in $resfile.
   my $extractor_status = $Mon{ "extractor" }->obeyw( "extract", "$param1" );
@@ -159,7 +163,7 @@ if( $Frm->uhdr("CREATE_CATALOGUE") ) {
     orac_print "Wrote SCAMP catalogue to $cat_file.\n\n";
   }
 # Remove temporary files.
-  $extractor->_delete_config_temp_file;
-  $extractor->_delete_param_temp_file;
-  $extractor->_delete_catalog_temp_file;
+#  $extractor->_delete_config_temp_file;
+#  $extractor->_delete_param_temp_file;
+#  $extractor->_delete_catalog_temp_file;
 }
