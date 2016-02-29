@@ -342,8 +342,13 @@ use ORAC::Version;
       } else {
         $pubprivate = 'private';
 
-        my $year = substr($frmdate, 0, 4);
-        $pubdate = $year+1 . substr($frmdate, 4, );
+        # Define date string parser
+        my $Strp = DateTime::Format::Strptime->new(
+                                             locale => 'C',
+                                             pattern => '%Y-%m-%dT%H:%M:%S',
+                                             time_zone => 'UTC',);
+        $pubdate = $Strp->parse_datetime( $frmdate );
+        $pubdate->add(years => 1);
       }
       orac_print "Access rights: $pubprivate $frmdate $pubdate\n";
       _SET_FILE_FITS_ITEM_ FILE=$file KEY=L1PUBPRV VALUE=$pubprivate COMMENT=Public|or|private|data?
