@@ -195,6 +195,7 @@ sub orac_calc_instrument_settings {
                          'KB79' => 'coj',
                          'KB71' => 'coj',
                          'KB16' => 'sqa',
+                         'FL09' => 'bpl',
                          'FL02' => 'lsc',
                          'FL03' => 'lsc',
                          'FL04' => 'lsc',
