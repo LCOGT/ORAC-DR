@@ -107,6 +107,7 @@ use ORAC::Version;
                      'EF09' => 'Autoguider',
                      'KB29' => '0m4-SciCam-SBIG',
                      'KB88' => '0m4-SciCam-SBIG',
+                     'KB94' => '0m4-SciCam-SBIG',
                    );
       my $cam = uc( $Frm->uhdr( "ORAC_INSTRUMENT" ) );
       if (!exists $lcogt_cammap{$cam}) {
@@ -317,8 +318,10 @@ use ORAC::Version;
         _SET_FILE_FITS_ITEM_ FILE=$file KEY=TAGID VALUE=$tagid COMMENT=Time|Allocation|Group|ID|(corrected)
       } elsif ( $tagid =~ /zero_pointing/i ) {
         $tagid = 'LCOGT';
-        print "Wrong value of TAGID found, changing to $tagid.\n";
+        $propid = 'calibrate';
+        print "Wrong value of TAGID, PROPID found, changing to $tagid, $propid.\n";
         _SET_FILE_FITS_ITEM_ FILE=$file KEY=TAGID VALUE=$tagid COMMENT=Time|Allocation|Group|ID|(corrected)
+        _SET_FILE_FITS_ITEM_ FILE=$file KEY=PROPID VALUE=$propid COMMENT=Proposal|ID|(corrected)
       }
 
 # Write back into hdr part of $Frm object
