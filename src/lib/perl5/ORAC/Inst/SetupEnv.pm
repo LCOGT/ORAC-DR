@@ -195,19 +195,20 @@ sub orac_calc_instrument_settings {
                          'KB79' => 'coj',
                          'KB71' => 'coj',
                          'KB16' => 'sqa',
-                         'FL09' => 'bpl',
                          'FL02' => 'lsc',
                          'FL03' => 'lsc',
                          'FL04' => 'lsc',
                          'FL05' => 'elp',
                          'FL07' => 'bpl',
                          'FL08' => 'coj',
+                         'FL09' => 'bpl',
                          'FL10' => 'cpt',
                          'EN06' => 'ogg',
                          'EM01' => 'ogg',
                          'FS02' => 'ogg',
                          'EM03' => 'coj',
                          'FS03' => 'coj',
+                         'FS01' => 'coj',
                          'EF02' => 'cpt',
                          'EF03' => 'cpt',
                          'EF04' => 'cpt',
@@ -479,11 +480,10 @@ sub orac_calc_instrument_settings {
     } else {
         $rawdir = File::Spec->catfile( $dataroot, $sitecode, $cameracode, $localut, "raw" );
     }
-     my $caldir;
+    my $caldir;
     $caldir = File::Spec->catdir( "/data/archive/Calibs/", $root, $cameracode );
     _mkdir_lcogt($caldir);
 
-    #return ( ORAC_DATA_CAL => File::Spec->catdir( $env{'ORAC_CAL_ROOT'}, $root, $cameracode ),
     return ( ORAC_DATA_CAL => $caldir,
              ORAC_DATA_IN => $rawdir,
              ORAC_DATA_OUT => $outdir,
