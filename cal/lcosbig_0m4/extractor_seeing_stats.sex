@@ -18,7 +18,7 @@ PARAMETERS_NAME	$ORAC_CAL_ROOT/lcosbig/extractor_seeing_stats.param
 
 DETECT_TYPE	CCD		# "CCD" or "PHOTO" (*)
 #FLAG_IMAGE	flag    	# filename for an input FLAG-image
-DETECT_MINAREA	12		# minimum number of pixels above threshold
+DETECT_MINAREA	5		# minimum number of pixels above threshold
 DETECT_THRESH	5.0		# <sigmas> or <threshold>,<ZP> in mag.arcsec-2
 ANALYSIS_THRESH	5.0		# <sigmas> or <threshold>,<ZP> in mag.arcsec-2
 
@@ -52,7 +52,7 @@ PIXEL_SCALE	0		# size of pixel in arcsec (0=use FITS WCS info).
 
 #------------------------- Star/Galaxy Separation ----------------------------
 
-SEEING_FWHM	1.5		# stellar FWHM in arcsec
+SEEING_FWHM	2.0		# stellar FWHM in arcsec
 STARNNW_NAME	$EXTRACTOR_DIR/config/default.nnw
                                 # Neural-Network_Weight table filename
 
