@@ -220,7 +220,9 @@ sub orac_calc_instrument_settings {
                          'KB29' => 'tfn',
                          'KB88' => 'tfn',
                          'KB84' => 'coj',
-                         'KB94' => 'coj'
+                         'KB94' => 'coj',
+			 'KB27' => 'ogg',
+			 'KB82' => 'ogg'
                        );
 
     # Split into instrument and camera code
