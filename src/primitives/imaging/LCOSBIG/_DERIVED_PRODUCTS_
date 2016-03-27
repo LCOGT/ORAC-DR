@@ -41,7 +41,7 @@
 #    RAS: Rachel Street (LCOGT)
 #
 # Copyright:
-#    Copyright (C) 2011-2015 Las Cumbres Observatory Global Telescope Inc.
+#    Copyright (C) 2011-2016 Las Cumbres Observatory Global Telescope Inc.
 #    All Rights Reserved.
 #
 #-
@@ -107,6 +107,7 @@ use ORAC::Version;
                      'EF09' => 'Autoguider',
                      'KB29' => '0m4-SciCam-SBIG',
                      'KB88' => '0m4-SciCam-SBIG',
+                     'KB84' => '0m4-SciCam-SBIG',
                      'KB94' => '0m4-SciCam-SBIG',
                    );
       my $cam = uc( $Frm->uhdr( "ORAC_INSTRUMENT" ) );
