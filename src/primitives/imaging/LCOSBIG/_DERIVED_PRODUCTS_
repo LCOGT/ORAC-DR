@@ -109,6 +109,8 @@ use ORAC::Version;
                      'KB88' => '0m4-SciCam-SBIG',
                      'KB84' => '0m4-SciCam-SBIG',
                      'KB94' => '0m4-SciCam-SBIG',
+                     'KB27' => '0m4-SciCam-SBIG',
+                     'KB82' => '0m4-SciCam-SBIG',
                    );
       my $cam = uc( $Frm->uhdr( "ORAC_INSTRUMENT" ) );
       if (!exists $lcogt_cammap{$cam}) {
